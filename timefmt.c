@@ -26,7 +26,7 @@ void usage(char *err)
 }
 
 
-void get_timestamp(char *buffer, size_t buff_len, char *format)
+void timefmt(char *buffer, size_t buff_len, char *format)
 {
   struct timespec cur_timespec;
   struct tm cur_timestruct;
@@ -67,7 +67,7 @@ void get_timestamp(char *buffer, size_t buff_len, char *format)
       buffer++;
     }
   }  /* while not '\0'. */
-}  /* get_timestamp */
+}  /* timefmt */
 
 
 int main(int argc, char **argv)
@@ -83,7 +83,7 @@ int main(int argc, char **argv)
   if (o_format == NULL) { usage("Missing -f option"); }
 
   char obuff[1000];
-  get_timestamp(obuff, sizeof(obuff), o_format);
+  timefmt(obuff, sizeof(obuff), o_format);
   printf("%s\n", obuff);
 
   return 0;
