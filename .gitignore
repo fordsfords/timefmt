@@ -7,9 +7,6 @@ x.*
 ~*
 .DS_Store
 
-# Executable
-timefmt
-
 # Prerequisites
 *.d
 
@@ -18,6 +15,7 @@ timefmt
 *.ko
 *.obj
 *.elf
+timefmt
 
 # Linker output
 *.ilk

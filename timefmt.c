@@ -1,4 +1,14 @@
 /* timefmt.c */
+/*
+# This code and its documentation is Copyright 2024 Steven Ford, http://geeky-boy.com
+# and licensed "public domain" style under Creative Commons "CC0": http://creativecommons.org/publicdomain/zero/1.0/
+# To the extent possible under law, the contributors to this project have
+# waived all copyright and related or neighboring rights to this work.
+# In other words, you can use this code for any purpose without any
+# restrictions.  This work is published from: United States.  The project home
+# is https://github.com/fordsfords/timefmt
+*/
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -45,7 +55,7 @@ void timefmt(char *buffer, size_t buff_len, char *format)
   buffer[0] = '\0';  /* Just in case strftime doesn't touch the buffer. */
   (void)strftime(buffer, buff_len, &format[1], &cur_timestruct);
 
-  /* Add factional part (if requested). */
+  /* Add fractional part (if requested). */
 
   snprintf(ns_str, sizeof(ns_str), "%09lu", cur_timespec.tv_nsec);  /* Leading zeros. */
 
